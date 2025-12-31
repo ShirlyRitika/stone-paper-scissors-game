@@ -8,12 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection
 mongoose.connect("mongodb://127.0.0.1:27017/rps_game")
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-// Routes
 app.use("/api/games", matchRoutes);
 
 const PORT = 5000;
